@@ -5,9 +5,9 @@ import Row from 'react-bootstrap/Row';
 
 export default class GameList extends Component {
 	render() {
-		let games = this.props.list.map((game) => {
+		let games = this.props.list.map((gameDetails) => {
 			return (
-				<GameItem name={game}/>
+				<GameItem gameDetails={gameDetails}/>
 			);
 		});
 

@@ -4,12 +4,13 @@ import Card from 'react-bootstrap/Card';
 
 export default class GameItem extends Component {
 	render() {
-		let name = this.props.name;
+		let details = this.props.gameDetails;
+		let thumbnailFilename = "/cdn/thumbnails/tn_" + details.id + ".png";
 
 		return (
 			<Card style={{maxWidth:"200px"}}>
-				<Card.Img variant="top" src="/cdn/chamber6.png"/>
-				<Card.Body>{name}</Card.Body>
+				<Card.Img variant="top" src={thumbnailFilename}/>
+				<Card.Body>{details.title}</Card.Body>
 			</Card>
 		);
 	}
