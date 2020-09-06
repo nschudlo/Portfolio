@@ -22,3 +22,5 @@ services:
       - 80:80
     volumes:
       - ./cdn/:/usr/share/nginx/cdn
+    depends_on:
+      - web-react

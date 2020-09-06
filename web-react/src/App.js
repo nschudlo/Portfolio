@@ -4,6 +4,8 @@ import Menu from './components/Menu.js';
 import GameList from "./components/GameList.js";
 import Container from "react-bootstrap/Container";
 
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+
 const GAME_LIST = [
   {
     id: "FruitShootRiot",
@@ -29,13 +31,12 @@ const GAME_LIST = [
 
 function App() {
   return (
-    <Container>
-
-      <Menu />
-    
-      <GameList list={GAME_LIST} />
-    
-    </Container>
+    <Router>
+      <Container>
+        <Menu />
+        <GameList list={GAME_LIST} />
+      </Container>
+    </Router>
   );
 }
 
