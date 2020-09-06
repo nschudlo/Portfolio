@@ -1,13 +1,13 @@
 version: '3.7'
 
 services:
-  react-portfolio:
-    container_name: react-portfolio
+  web-react:
+    container_name: web-react
     build:
-      context: ./react-portfolio
+      context: ./web-react
       dockerfile: Dockerfile
     volumes:
-      - './react-portfolio:/app'
+      - './web-react:/app'
       - '/app/node_modules'
     ports:
       - 3001:3000
