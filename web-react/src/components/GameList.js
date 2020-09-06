@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-import GameItem from "./GameItem";
+import GameItem from './GameItem';
+import Row from 'react-bootstrap/Row';
 
 export default class GameList extends Component {
 	render() {
-		debugger;
 		let games = this.props.list.map((game) => {
 			return (
 				<GameItem name={game}/>
@@ -12,7 +12,9 @@ export default class GameList extends Component {
 		});
 
 		return (
-			<div>{games}</div>
+			<Row>
+				{games}
+			</Row>
 		);
 	}
 }

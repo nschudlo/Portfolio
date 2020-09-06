@@ -9,9 +9,11 @@ const GAME_LIST = ["Corpse Cuisine", "Night Shift", "Fracas Jr.", "Gladiators"];
 function App() {
   return (
     <Container>
-      This is a test
-      <Menu/>
+
+      <Menu />
+    
       <GameList list={GAME_LIST} />
+    
     </Container>
   );
 }

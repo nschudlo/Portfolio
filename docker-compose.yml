@@ -22,3 +22,5 @@ services:
       dockerfile: Dockerfile
     ports:
       - 80:80
+    volumes:
+      - ./cdn/:/usr/share/nginx/cdn
