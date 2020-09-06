@@ -6,6 +6,10 @@ import Container from "react-bootstrap/Container";
 
 const GAME_LIST = [
   {
+    id: "FruitShootRiot",
+    title: "Fruit Shoot Riot",
+  },
+  {
     id: "CorpseCuisine",
     title: "Corpse Cuisine",
   }, 
