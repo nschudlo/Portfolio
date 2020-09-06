@@ -7,7 +7,7 @@ export default class GameList extends Component {
 	render() {
 		let games = this.props.list.map((gameDetails) => {
 			return (
-				<GameItem gameDetails={gameDetails}/>
+				<GameItem key={gameDetails.id} gameDetails={gameDetails}/>
 			);
 		});
 
