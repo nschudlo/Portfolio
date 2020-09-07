@@ -34,7 +34,9 @@ function App() {
     <Router>
       <Container>
         <Menu />
-        <GameList list={GAME_LIST} />
+        <Route path="/portfolio">
+          <GameList list={GAME_LIST} />
+        </Route>
       </Container>
     </Router>
   );
