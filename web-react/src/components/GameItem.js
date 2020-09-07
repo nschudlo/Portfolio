@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import Card from 'react-bootstrap/Card';
 
@@ -10,11 +10,13 @@ export default function GameItem(props) {
 	let {url} = useRouteMatch();
 
 	return (
-		<Link to={`${url}/` + details.id}>
-			<Card style={{maxWidth:"200px"}}>
-				<Card.Img variant="top" src={thumbnailFilename}/>
-				<Card.Body>{details.title}</Card.Body>
-			</Card>
-		</Link>
+		<div>
+			<Link to={`${url}/` + details.id}>
+				<Card style={{maxWidth:"200px"}}>
+					<Card.Img variant="top" src={thumbnailFilename}/>
+					<Card.Body>{details.title}</Card.Body>
+				</Card>
+			</Link>
+		</div>
 	);
 }

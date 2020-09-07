@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Row from 'react-bootstrap/Row';
+import CardDeck from 'react-bootstrap/CardDeck';
 
 import GameItem from './GameItem';
-import Row from 'react-bootstrap/Row';
 
 export default function GameList(props) {
 	let games = props.list.map((gameDetails) => {
@@ -11,7 +12,7 @@ export default function GameList(props) {
 	});
 
 	return (
-		<Row>
+		<Row className="justify-content-around">
 			{games}
 		</Row>
 	);
