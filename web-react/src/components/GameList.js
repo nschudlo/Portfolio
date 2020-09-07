@@ -1,5 +1,4 @@
 import React from 'react';
-import Row from 'react-bootstrap/Row';
 import CardDeck from 'react-bootstrap/CardDeck';
 
 import GameItem from './GameItem';
@@ -12,8 +11,8 @@ export default function GameList(props) {
 	});
 
 	return (
-		<Row className="justify-content-around">
+		<div className="d-flex flex-wrap justify-content-around">
 			{games}
-		</Row>
+		</div>
 	);
 }

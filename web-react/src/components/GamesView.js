@@ -2,7 +2,6 @@ import React from 'react';
 
 import {useRouteMatch} from 'react-router-dom';
 
-import Row from 'react-bootstrap/Row';
 import Accordion from 'react-bootstrap/Accordion';
 
 import GameView from './GameView';
@@ -22,10 +21,10 @@ export default function GamesView(props) {
 	let activeKey = match !== null ? match.params.id : null;
 
 	return (
-		<Row className="justify-content-center">
+		<div className="d-flex justify-content-center">
 			<Accordion activeKey={activeKey}>
 				{games}
 			</Accordion>
-		</Row>
+		</div>
 	);
 }
