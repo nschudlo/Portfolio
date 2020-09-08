@@ -90,6 +90,9 @@ export default function GameView(props) {
 		);
 	}
 
+	let description = details.description.split("<br>")
+		.map((text) => (<p>{text}</p>));
+
 	useEffect(() => {
 		// Need to set the focus on Night Shift when 
 		// it's playing to make the controls work
@@ -104,7 +107,8 @@ export default function GameView(props) {
 	return (
 		<div>
 			<h1>{details.title}</h1>
-			<Image src={bannerUrl} fluid/>
+			<Image src={bannerUrl}/>
+			{description}
 			<div className="d-flex justify-content-center">
 				{clickToPlay}
 				{game}
