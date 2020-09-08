@@ -1,5 +1,4 @@
 import React from 'react';
-import CardDeck from 'react-bootstrap/CardDeck';
 
 import GameItem from './GameItem';
 

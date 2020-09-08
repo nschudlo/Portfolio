@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import GameList from "./GameList";
 import GamesView from "./GamesView";
@@ -7,6 +7,8 @@ const GAME_LIST = [
   {
     id: "FruitShootRiot",
     title: "Fruit Shoot Riot",
+    width: 900,
+    height: 506,
   },
   {
     id: "CorpseCuisine",
@@ -15,6 +17,8 @@ const GAME_LIST = [
   {
     id: "NightShift",
     title: "Night Shift",
+    width: 900,
+    height: 600,
   },
   {
     id: "MonkeyFracasJr",
@@ -26,18 +30,11 @@ const GAME_LIST = [
   }
 ];
 
-export default class PortfolioView extends Component {
-
-	onGameClicked(gameId) {
-		this.setState({selectedGameId:gameId});
-	}
-
-	render() {
-		return (
-			<div>
-				<GamesView list={GAME_LIST}/>
-				<GameList list={GAME_LIST}/>
-			</div>
-		);
-	}
+export default function PortfolioView(props) {
+	return (
+		<div>
+			<GamesView list={GAME_LIST}/>
+			<GameList list={GAME_LIST}/>
+		</div>
+	);
 }
