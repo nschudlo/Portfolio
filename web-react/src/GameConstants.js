@@ -26,9 +26,15 @@ export const GAME_LIST = [
   {
     id: MONKEY_FRACAS_JR_ID,
     title: "Monkey Fracas Jr.",
+    width: 600,
+    height: 450,
+    YouTubeId: "ADWHb-Kgyzw",
   },
   {
     id: AMERICAN_GLADIATORS_ID,
     title: "American Gladiators",
+    width: 600,
+    height: 450,
+    YouTubeId: "2n6finc1KUY",
   }
 ];

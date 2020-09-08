@@ -31,7 +31,7 @@ export default function GameView(props) {
 				);
 				break;
 
-			// Setup the iframe
+			// Setup the game in an iframe
 			case GameConstants.FRUIT_SHOOT_RIOT_ID:
 			case GameConstants.NIGHT_SHIFT_ID:
 				game = (
@@ -49,7 +49,16 @@ export default function GameView(props) {
 			//Setup the YouTube video
 			case GameConstants.MONKEY_FRACAS_JR_ID:
 			case GameConstants.AMERICAN_GLADIATORS_ID:
-				
+				game = (
+					<Iframe 
+					  width={details.width + "px"}
+					  height={details.height + "px"}
+					  src={"//www.youtube.com/embed/" +details.YouTubeId+ "?rel=0&showinfo=0"} 
+					  frameBorder="0" 
+					  allowFullScreen
+					/>
+				);
+				break;
 			default:
 				setShowPreview(true);
 
