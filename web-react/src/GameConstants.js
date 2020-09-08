@@ -10,24 +10,28 @@ export const GAME_LIST = [
     title: "Fruit Shoot Riot",
     width: 900,
     height: 506,
+    clickMarginLeft: '-440px',
   },
   {
     id: CORPSE_CUISINE_ID,
     title: "Corpse Cuisine",
     width: 300,
     height: 450,
+    clickMarginLeft: '-180px',
   }, 
   {
     id: NIGHT_SHIFT_ID,
     title: "Night Shift",
     width: 900,
     height: 600,
+    clickMarginLeft: '-440px',
   },
   {
     id: MONKEY_FRACAS_JR_ID,
     title: "Monkey Fracas Jr.",
     width: 600,
     height: 450,
+    clickMarginLeft: '-275px',
     YouTubeId: "ADWHb-Kgyzw",
   },
   {
@@ -35,6 +39,7 @@ export const GAME_LIST = [
     title: "American Gladiators",
     width: 600,
     height: 450,
+    clickMarginLeft: '-275px',
     YouTubeId: "2n6finc1KUY",
   }
 ];

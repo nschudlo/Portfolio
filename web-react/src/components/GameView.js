@@ -5,6 +5,8 @@ import Iframe from 'react-iframe'
 
 import * as GameConstants from "../GameConstants";
 
+const CLICK_TO_PLAY_URL = "/cdn/clickToPlay.png";
+
 export default function GameView(props) {
 	let details = props.details;
 	let bannerUrl = "/cdn/banners/bn_" + details.id + ".png";
@@ -65,6 +67,7 @@ export default function GameView(props) {
 		}
 	}
 
+	let clickToPlay = null;
 	if(showPreview) {
 		game = (
 			<Image 
@@ -73,6 +76,16 @@ export default function GameView(props) {
 			  width={details.width + "px"}
 			  height={details.height + "px"}
 			  fluid
+			/>
+		);
+
+		clickToPlay = (
+			<img 
+			  src={CLICK_TO_PLAY_URL} 
+			  style={{
+			  	position:"absolute", 
+			  	marginLeft: details.clickMarginLeft,
+			  }}
 			/>
 		);
 	}
@@ -93,6 +106,7 @@ export default function GameView(props) {
 			<h1>{details.title}</h1>
 			<Image src={bannerUrl} fluid/>
 			<div className="d-flex justify-content-center">
+				{clickToPlay}
 				{game}
 			</div>
 		</div>
