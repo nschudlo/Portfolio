@@ -9,7 +9,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 function App() {
   return (
     <Router>
-      <Container style={{backgroundColor:"lightGrey"}}>
+      <Container fluid="xl" style={{backgroundColor:"lightGrey"}}>
         <Menu />
         <Route path="/portfolio">
           <PortfolioView />

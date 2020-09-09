@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 
 import Image from 'react-bootstrap/Image';
 import Iframe from 'react-iframe'
+import Container from 'react-bootstrap/Container';
 
 import * as GameConstants from "../GameConstants";
 
@@ -75,7 +76,6 @@ export default function GameView(props) {
 			  src={"/cdn/previews/ss_" + details.id}
 			  width={details.width + "px"}
 			  height={details.height + "px"}
-			  fluid
 			/>
 		);
 
@@ -105,14 +105,17 @@ export default function GameView(props) {
 	});
 
 	return (
-		<div>
-			<h1>{details.title}</h1>
-			<Image src={bannerUrl}/>
-			{description}
+		<Container fluid>
+			<div className="d-flex justify-content-center">
+				<Image src={bannerUrl} width="100%"/>
+			</div>
+			<div>
+				{description}
+			</div>
 			<div className="d-flex justify-content-center">
 				{clickToPlay}
 				{game}
 			</div>
-		</div>
+		</Container>
 	);
 }

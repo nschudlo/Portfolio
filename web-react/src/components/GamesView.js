@@ -7,7 +7,7 @@ import Accordion from 'react-bootstrap/Accordion';
 import GameView from './GameView';
 
 export default function GamesView(props) {
-	let match = useRouteMatch("/portfolio/:id");
+	let match = useRouteMatch("*/:id");
 	let activeKey = match !== null ? match.params.id : null;
 
 	let games = props.list.map((gameDetails) => {
@@ -25,10 +25,8 @@ export default function GamesView(props) {
 	});
 
 	return (
-		<div className="d-flex justify-content-center">
-			<Accordion activeKey={activeKey}>
-				{games}
-			</Accordion>
-		</div>
+		<Accordion activeKey={activeKey} style={{width:"100%"}}>
+			{games}
+		</Accordion>
 	);
 }
