@@ -10,7 +10,7 @@ export const GAME_LIST = [
     title: "Fruit Shoot Riot",
     width: 900,
     height: 506,
-    clickMarginLeft: '-440px',
+    clickMarginLeft: '-920px',
     description: "",
   },
   {
@@ -18,7 +18,7 @@ export const GAME_LIST = [
     title: "Corpse Cuisine",
     width: 300,
     height: 450,
-    clickMarginLeft: '-180px',
+    clickMarginLeft: '-370px',
     description: "Corpse Cuisine is a tile swapping arcade style game with "
     	+ "Zombies and Body Parts. As the owner of a little restaurant, you "
     	+ "need to figure out how to satisfy your customers. When a hoard of "
@@ -33,7 +33,7 @@ export const GAME_LIST = [
     title: "Night Shift",
     width: 900,
     height: 600,
-    clickMarginLeft: '-440px',
+    clickMarginLeft: '-880px',
     description: "Night Shift is a side scrolling, fun hearted, action game, "
     	+ "where you follow the adventure of Nurse Nikki as she attempts to "
     	+ "cure the zombie patients and escape the hospital!<br>I made this "
@@ -45,7 +45,7 @@ export const GAME_LIST = [
     title: "Monkey Fracas Jr.",
     width: 600,
     height: 450,
-    clickMarginLeft: '-275px',
+    clickMarginLeft: '-580px',
     YouTubeId: "ADWHb-Kgyzw",
     description: "Based on the arcade video game Monkey Fracas Jr. from the "
     	+ "pilot episode of the TV show Futurama. The goal of the game is to "
@@ -60,7 +60,7 @@ export const GAME_LIST = [
     title: "American Gladiators",
     width: 600,
     height: 450,
-    clickMarginLeft: '-275px',
+    clickMarginLeft: '-580px',
     YouTubeId: "2n6finc1KUY",
     description: "A short game designed to emulate the American Gladiators' "
     	+ "game 'Assualt'. As a kid watching American Gladiators, I always "

@@ -112,7 +112,7 @@ export default function GameView(props) {
 			<div>
 				{description}
 			</div>
-			<div className="d-flex justify-content-center">
+			<div className="d-flex justify-content-center" style={{position:"relative"}}>
 				{clickToPlay}
 				{game}
 			</div>
