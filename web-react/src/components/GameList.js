@@ -1,22 +1,23 @@
 import React from 'react';
 
 import GameItem from './GameItem';
-import Container from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
+
+import SlidingMenu from "./SlidingMenu";
 
 export default function GameList(props) {
 	let games = props.list.map((gameDetails) => {
 		return (
-			<Col sm="auto">
-				<GameItem key={gameDetails.id} gameDetails={gameDetails}/>
-			</Col>
+			<GameItem 
+			  key={gameDetails.id} 
+			  gameDetails={gameDetails}
+			  className="scrolling-card"
+			/>
 		);
 	});
 
 	return (
-		<Row noGutters>
+		<SlidingMenu>
 			{games}
-		</Row>
+		</SlidingMenu>
 	);
 }

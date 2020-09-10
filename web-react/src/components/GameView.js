@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 
 import Image from 'react-bootstrap/Image';
 import Iframe from 'react-iframe'
-import Container from 'react-bootstrap/Container';
 
 import * as GameConstants from "../GameConstants";
 
@@ -26,6 +25,7 @@ export default function GameView(props) {
 			case GameConstants.CORPSE_CUISINE_ID:
 				game = (
 					<object 
+					  aria-label="Corpse Cuisine"
 					  id="corpsecuisine" 
 					  data="/games/CorpseCuisine/Zero.swf"
 					  width={details.width + "px"}
@@ -80,7 +80,7 @@ export default function GameView(props) {
 		);
 
 		clickToPlay = (
-			<img 
+			<Image 
 			  src={CLICK_TO_PLAY_URL} 
 			  style={{
 			  	position:"absolute", 
@@ -91,7 +91,7 @@ export default function GameView(props) {
 	}
 
 	let description = details.description.split("<br>")
-		.map((text) => (<p>{text}</p>));
+		.map((text) => (<p key={text}>{text}</p>));
 
 	useEffect(() => {
 		// Need to set the focus on Night Shift when 
@@ -105,7 +105,7 @@ export default function GameView(props) {
 	});
 
 	return (
-		<Container fluid>
+		<div>
 			<div className="d-flex justify-content-center">
 				<Image src={bannerUrl} width="100%"/>
 			</div>
@@ -116,6 +116,6 @@ export default function GameView(props) {
 				{clickToPlay}
 				{game}
 			</div>
-		</Container>
+		</div>
 	);
 }

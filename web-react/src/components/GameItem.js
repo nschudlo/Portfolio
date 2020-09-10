@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Card from 'react-bootstrap/Card';
+import Image from 'react-bootstrap/Image';
 
 import {Link, useRouteMatch} from 'react-router-dom';
 
@@ -10,13 +10,13 @@ export default function GameItem(props) {
 	let {url} = useRouteMatch();
 
 	return (
-		<div>
-			<Link to={`${url}/` + details.id}>
-				<Card style={{maxWidth:"200px"}}>
-					<Card.Img variant="top" src={thumbnailFilename}/>
-					<Card.Body>{details.title}</Card.Body>
-				</Card>
-			</Link>
-		</div>
+		<Link to={`${url}/` + details.id}>
+			<Image
+			  className="grow"
+			  src={thumbnailFilename} 
+			  width="200px" 
+			  height="133px"
+			/>
+		</Link>
 	);
 }
