@@ -1,4 +1,5 @@
 export const FRUIT_SHOOT_RIOT_ID    = "FruitShootRiot";
+export const FIREBALL_ID            = "Fireball";
 export const CORPSE_CUISINE_ID      = "CorpseCuisine";
 export const NIGHT_SHIFT_ID         = "NightShift";
 export const MONKEY_FRACAS_JR_ID    = "MonkeyFracasJr";
@@ -12,6 +13,14 @@ export const GAME_LIST = [
     height: 506,
     clickMarginLeft: '-920px',
     description: "",
+  },
+  {
+  	id: FIREBALL_ID,
+  	title: "Fireball",
+  	width: 900,
+  	height: 506,
+  	clickMarginLeft: '-920px',
+  	description: "It's Fireball",
   },
   {
     id: CORPSE_CUISINE_ID,

@@ -37,6 +37,7 @@ export default function GameView(props) {
 			// Setup the game in an iframe
 			case GameConstants.FRUIT_SHOOT_RIOT_ID:
 			case GameConstants.NIGHT_SHIFT_ID:
+			case GameConstants.FIREBALL_ID:
 				game = (
 					<Iframe 
 					  id={details.id + "_game"}
