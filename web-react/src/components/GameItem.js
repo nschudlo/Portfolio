@@ -12,7 +12,6 @@ export default function GameItem(props) {
 	return (
 		<Link to={`${url}/` + details.id}>
 			<Image
-			  className="grow"
 			  src={thumbnailFilename} 
 			  width="200px" 
 			  height="133px"
