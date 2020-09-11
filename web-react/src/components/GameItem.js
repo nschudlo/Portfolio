@@ -8,9 +8,10 @@ export default function GameItem(props) {
 	let details = props.gameDetails;
 	let thumbnailFilename = "/cdn/thumbnails/tn_" + details.id + ".png";
 	let {url} = useRouteMatch();
+	let link = url + (url.endsWith('/') ? "" : "/") + details.id;
 
 	return (
-		<Link to={`${url}/` + details.id}>
+		<Link to={link}>
 			<Image
 			  src={thumbnailFilename} 
 			  width="200px" 
