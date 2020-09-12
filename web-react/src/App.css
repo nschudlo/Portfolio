@@ -7,14 +7,6 @@ h1, h2, p {
   src: url(fonts/Ubuntu-Regular.ttf);
 }
 
-.game-menu {
-  padding: 10px;
-  margin-bottom: 10px; 
-  background-color: #2c8659;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
-
 /* Sliding Menu */
 .scrolling-wrapper {
   display: flex;
@@ -49,7 +41,29 @@ html, body, #root {
 .site-header {
   height: 50px;
   background-color: #339966;
+
+  /* Makes the game selector layer above */
   position: absolute;
+
+  /* Bottom ridge */
+  border-bottom: #339966;
+  border-bottom-width: 5px;
+  border-bottom-style: outset;
+}
+
+.game-menu {
+  padding: 10px;
+  margin-bottom: 10px; 
+
+  /* Rounded corners */
+  background-color: #339966;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  /* Bottom ridge */
+  border-bottom: #339966;
+  border-bottom-width: 5px;
+  border-bottom-style: outset;
 }
 
 body {
@@ -64,6 +78,8 @@ body {
 .site-body {
   max-width: 950px !important;
   position: relative;
+  padding-right: 0px !important;
+  padding-left: 0px !important;
   /*background-color: #ccffcc;*/
 }
 
@@ -71,4 +87,8 @@ body {
   height:30px;
   margin-top: -30px;
   background-color: #339966;
+
+  border-top: #339966;
+  border-top-width: 5px;
+  border-top-style: inset;
 }

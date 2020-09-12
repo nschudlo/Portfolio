@@ -15,7 +15,7 @@ function App() {
           <SiteHeader />
         </Container>
 
-        <Container fluid="xl" className="site-body">
+        <Container fluid="lg" className="site-body">
           <Route path="/">
             <PortfolioView />
           </Route>
