@@ -1,12 +1,13 @@
+h1, h2, p {
+  font-family: ubuntu;
+}
+
 /* Sliding Menu */
 .scrolling-wrapper {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: hidden;
   overflow-y: hidden;
-}
-.scrolling-card {
-  flex: 0 0 auto;
 }
 
 /* Show the hand cursor on hover */
@@ -26,4 +27,38 @@
 /* Hide an element */
 .hidden {
   visibility: hidden;
+}
+
+@font-face {
+  font-family: ubuntu;
+  src: url(fonts/Ubuntu-Regular.ttf);
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+.site-header {
+  height: 50px;
+  background-color: #339966;
+}
+
+body {
+  background-color: #b3ffb3 !important;
+}
+
+#header-and-body {
+  min-height: 100%;
+  padding-bottom: 30px;
+}
+
+.site-body {
+  max-width: 950px !important;
+  /*background-color: #ccffcc;*/
+}
+
+.site-footer {
+  height:30px;
+  margin-top: -30px;
+  background-color: #339966;
 }

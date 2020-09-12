@@ -10,7 +10,6 @@ export default function GameList(props) {
 			<GameItem 
 			  key={gameDetails.id} 
 			  gameDetails={gameDetails}
-			  className="scrolling-card"
 			/>
 		);
 	});

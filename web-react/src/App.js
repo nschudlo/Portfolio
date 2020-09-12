@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import SiteHeader from "./components/SiteHeader";
+import SiteFooter from "./components/SiteFooter";
 import PortfolioView from "./components/PortfolioView";
 import Container from "react-bootstrap/Container";
 
@@ -9,13 +10,20 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 function App() {
   return (
     <Router>
-      <Container fluid style={{backgroundColor:"darkGrey", height:"50px"}}>
-        <SiteHeader />
-      </Container>
-      <Container fluid="xl" style={{backgroundColor:"lightGrey"}}>
-        <Route path="/">
-          <PortfolioView />
-        </Route>
+      <div id="header-and-body">
+        <Container fluid className="site-header">
+          <SiteHeader />
+        </Container>
+
+        <Container fluid="xl" className="site-body">
+          <Route path="/">
+            <PortfolioView />
+          </Route>
+        </Container>
+      </div>
+
+      <Container fluid className="site-footer">
+        <SiteFooter />
       </Container>
     </Router>
   );

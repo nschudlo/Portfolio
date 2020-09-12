@@ -72,10 +72,12 @@ export const GAME_LIST = [
     clickMarginLeft: '-580px',
     YouTubeId: "2n6finc1KUY",
     description: "A short game designed to emulate the American Gladiators' "
-    	+ "game 'Assualt'. As a kid watching American Gladiators, I always "
+    	+ "game 'Assault'. As a kid watching American Gladiators, I always "
     	+ "wanted to be able to play some of the obstacle courses and compete "
     	+ "against the Gladiators! This short game allows you to play from the "
     	+ "perspective of a contestant on the show.<br>This mini-game was an "
-    	+ "assignment for my fourth year Game Engines course in University.",
+    	+ "assignment for one of my fourth year courses at Western University "
+    	+ "(4482a – Game Engine Development: Real-time Rendering and Physical "
+    	+ "Simulation).",
   }
 ];
