@@ -12,7 +12,18 @@ export const GAME_LIST = [
     width: 900,
     height: 506,
     clickMarginLeft: '-920px',
-    description: "",
+    description: "Fruit Shoot Riot is the result of a 48 hour game jam, where "
+    	+ "the theme of the jam was 'Guns that don't shoot bullets.' This top "
+    	+ "down shooter has you feeding fruits to the monster patrons of your "
+    	+ "tavern. The number of fruits and number of monsters ramps up as you "
+    	+ "rack up the points and go for the high score.<br>This was my first "
+    	+ "time working in the Unity engine with multiple other devs, but we were "
+    	+ "able to communicate effectively and only ran into minor issues "
+    	+ "when it came to merging our work together. We were also able to "
+    	+ "efficiently divide and prioritize the work so were always working "
+    	+ "together to build out the game features we wanted in the game.<br>"
+    	+ "The team members I worked with were: Xander Ward, Keith Mclean, "
+    	+ "and Carlos Corrêa.",
   },
   {
   	id: FIREBALL_ID,
@@ -20,7 +31,15 @@ export const GAME_LIST = [
   	width: 900,
   	height: 506,
   	clickMarginLeft: '-920px',
-  	description: "It's Fireball",
+  	description: "Fireball was created as part of a 48 hour game jam at Big Viking "
+    	+ "Games in 2017. The theme of the jam was 'If you build it, they will come.' "
+    	+ "The game puts you in control of a fire fighter responding to a corn field "
+    	+ "on fire. Clicking and dragging directs the fire fighter where to move and "
+    	+ "which direction to spray to put out the blaze.<br>This was my first Unity "
+    	+ "game, and also the first time working in 3D in Unity. I implemented the "
+    	+ "level loading, pathfinding of the fire fighter (using A* pathfinding), and "
+    	+ "the firespread simulation.<br>The team members I worked with were: Don "
+    	+ "Champan and Nick Beltrame.",
   },
   {
     id: CORPSE_CUISINE_ID,
