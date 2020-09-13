@@ -11,6 +11,11 @@ export default function GamesView(props) {
 	let activeKey = match !== null ? match.params.id : null;
 
 	let games = props.list.map((gameDetails) => {
+		// Show the first game if none are selected
+		if(activeKey === null) {
+			activeKey = gameDetails.id;
+		}
+
 		let isVisible = activeKey === gameDetails.id;
 		return (
 			<Accordion.Collapse eventKey={gameDetails.id} key={gameDetails.id}>
