@@ -2,6 +2,23 @@ import React, {useRef, useEffect} from 'react';
 
 import Image from 'react-bootstrap/Image';
 
+/**
+ * The amount to scroll each 
+ * interval.
+ */
+const JUMP = 10;
+
+/**
+ * Delay between micro scrolls
+ */
+const JUMP_DELAY_MS = 8;
+
+/**
+ * The amount to scroll when 
+ * the arrows are clicked.
+ */
+const SCROLL_AMOUNT = 250;
+
 const wrapperStyle = {
 	position: "relative"
 }
@@ -73,40 +90,60 @@ export default function SlidingMenu(props) {
 }
 
 /**
- * Move left in the menu by 1 thumbnail width.
+ * Move left in the menu.
  * @param scrollContainer
  * @param leftArrow
  * @param rightArrow
  */
-function onClickLeft(scrollContainer, leftArrow, rightArrow) {
-	let targetLeft = Math.max(scrollContainer.scrollLeft - 250, 0);
-	let interval = setInterval(() => {
-		if(scrollContainer.scrollLeft > targetLeft) {
-			scrollContainer.scrollLeft = scrollContainer.scrollLeft - 10;
-		} else {
-			clearInterval(interval);
-			updateArrows(scrollContainer, leftArrow, rightArrow);
-		}
-	}, 8);
+async function onClickLeft(scrollContainer, leftArrow, rightArrow) {
+	let targetLeft = Math.max(scrollContainer.scrollLeft - SCROLL_AMOUNT, 0);
+	await scrollTo(scrollContainer, targetLeft);
+	updateArrows(scrollContainer, leftArrow, rightArrow);
 }
 
 /**
- * Move right in the menu by 1 thumbnail width.
+ * Move right in the menu.
  * @param scrollContainer
  * @param leftArrow
  * @param rightArrow
  */
-function onClickRight(scrollContainer, leftArrow, rightArrow) {
+async function onClickRight(scrollContainer, leftArrow, rightArrow) {
 	let maxWidth = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-	let targetLeft = Math.min(scrollContainer.scrollLeft + 250, maxWidth);
-	let interval = setInterval(() => {
-		if(scrollContainer.scrollLeft < targetLeft) {
-			scrollContainer.scrollLeft = scrollContainer.scrollLeft + 10;
-		} else {
-			clearInterval(interval);
-			updateArrows(scrollContainer, leftArrow, rightArrow);
-		}
-	}, 8);
+	let targetLeft = Math.min(scrollContainer.scrollLeft + SCROLL_AMOUNT, maxWidth);
+	await scrollTo(scrollContainer, targetLeft);
+	updateArrows(scrollContainer, leftArrow, rightArrow);
+}
+
+/**
+ * Smoothly scroll to a position.
+ * @param scrollContainer
+ * @param targetLeft
+ */
+function scrollTo(scrollContainer, targetLeft) {
+	return new Promise(resolve => {
+		let interval = setInterval(() => {
+			let left = scrollContainer.scrollLeft;
+
+			// If within the moving window set to the target
+			if((left < targetLeft + JUMP) && (left > targetLeft - JUMP)) {
+				scrollContainer.scrollLeft = targetLeft;
+			}
+
+			// Need to move right
+			if(left < targetLeft) {
+				scrollContainer.scrollLeft = left + JUMP;
+
+			// Need to move left
+			} else if(scrollContainer.scrollLeft > targetLeft) {
+				scrollContainer.scrollLeft = left - JUMP;
+
+			// At the target
+			} else {
+				clearInterval(interval);
+				resolve();
+			}
+		}, JUMP_DELAY_MS);
+	});
 }
 
 /**
