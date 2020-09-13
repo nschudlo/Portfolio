@@ -134,7 +134,7 @@ function scrollTo(scrollContainer, targetLeft) {
 				scrollContainer.scrollLeft = left - JUMP;
 			}
 
-			// If the target has been passed go directly
+			// The target has been hit
 			if((goingRight && left >= targetLeft) || (!goingRight && left <= targetLeft)) {
 				scrollContainer.scrollLeft = targetLeft;
 				clearInterval(interval);
