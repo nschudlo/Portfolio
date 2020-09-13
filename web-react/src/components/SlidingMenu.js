@@ -79,8 +79,15 @@ export default function SlidingMenu(props) {
  * @param rightArrow
  */
 function onClickLeft(scrollContainer, leftArrow, rightArrow) {
-	scrollContainer.scrollLeft = scrollContainer.scrollLeft - 200;
-	updateArrows(scrollContainer, leftArrow, rightArrow);
+	let targetLeft = Math.max(scrollContainer.scrollLeft - 250, 0);
+	let interval = setInterval(() => {
+		if(scrollContainer.scrollLeft > targetLeft) {
+			scrollContainer.scrollLeft = scrollContainer.scrollLeft - 10;
+		} else {
+			clearInterval(interval);
+			updateArrows(scrollContainer, leftArrow, rightArrow);
+		}
+	}, 8);
 }
 
 /**
@@ -90,8 +97,16 @@ function onClickLeft(scrollContainer, leftArrow, rightArrow) {
  * @param rightArrow
  */
 function onClickRight(scrollContainer, leftArrow, rightArrow) {
-	scrollContainer.scrollLeft = scrollContainer.scrollLeft + 200;
-	updateArrows(scrollContainer, leftArrow, rightArrow);
+	let maxWidth = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+	let targetLeft = Math.min(scrollContainer.scrollLeft + 250, maxWidth);
+	let interval = setInterval(() => {
+		if(scrollContainer.scrollLeft < targetLeft) {
+			scrollContainer.scrollLeft = scrollContainer.scrollLeft + 10;
+		} else {
+			clearInterval(interval);
+			updateArrows(scrollContainer, leftArrow, rightArrow);
+		}
+	}, 8);
 }
 
 /**

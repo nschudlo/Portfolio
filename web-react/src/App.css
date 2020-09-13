@@ -73,9 +73,12 @@ html, body, #root {
 .game-menu-item:hover {
   filter: brightness(1);
 }
+.last {
+  margin-right: 0px;
+}
 
 .sliding-menu-arrow:hover {
-  filter: invert(1);
+  filter: invert(0.7);
 }
 
 body {

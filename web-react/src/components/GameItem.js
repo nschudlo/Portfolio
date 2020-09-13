@@ -10,13 +10,17 @@ export default function GameItem(props) {
 	let {url} = useRouteMatch();
 	let link = url + (url.endsWith('/') ? "" : "/") + details.id;
 
+	let className = "game-menu-item";
+	if(props.isLast) {
+		className += " last";
+	}
 	return (
 		<Link to={link}>
 			<Image
 			  src={thumbnailFilename} 
 			  width="200px" 
 			  height="133px"
-			  className="game-menu-item"
+			  className={className}
 			/>
 		</Link>
 	);
