@@ -120,14 +120,10 @@ async function onClickRight(scrollContainer, leftArrow, rightArrow) {
  * @param targetLeft
  */
 function scrollTo(scrollContainer, targetLeft) {
+	let goingRight = scrollContainer.scrollLeft < targetLeft;
 	return new Promise(resolve => {
 		let interval = setInterval(() => {
 			let left = scrollContainer.scrollLeft;
-
-			// If within the moving window set to the target
-			if((left < targetLeft + JUMP) && (left > targetLeft - JUMP)) {
-				scrollContainer.scrollLeft = targetLeft;
-			}
 
 			// Need to move right
 			if(left < targetLeft) {
@@ -136,11 +132,14 @@ function scrollTo(scrollContainer, targetLeft) {
 			// Need to move left
 			} else if(scrollContainer.scrollLeft > targetLeft) {
 				scrollContainer.scrollLeft = left - JUMP;
+			}
 
-			// At the target
-			} else {
+			// If the target has been passed go directly
+			if((goingRight && left >= targetLeft) || (!goingRight && left <= targetLeft)) {
+				scrollContainer.scrollLeft = targetLeft;
 				clearInterval(interval);
 				resolve();
+				return;
 			}
 		}, JUMP_DELAY_MS);
 	});
