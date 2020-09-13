@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import GameItem from './GameItem';
 
@@ -21,3 +22,7 @@ export default function GameList(props) {
 		</SlidingMenu>
 	);
 }
+
+GameList.propTypes = {
+	list: PropTypes.array
+};

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {useRouteMatch} from 'react-router-dom';
 
@@ -35,3 +36,7 @@ export default function GamesView(props) {
 		</Accordion>
 	);
 }
+
+GamesView.propTypes = {
+	list: PropTypes.array
+};

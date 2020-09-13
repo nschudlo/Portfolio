@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Image from 'react-bootstrap/Image';
 
@@ -25,3 +26,7 @@ export default function GameItem(props) {
 		</Link>
 	);
 }
+GameItem.propTypes = {
+	gameDetails: PropTypes.object,
+	isLast: PropTypes.bool
+};
