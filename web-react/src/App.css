@@ -66,6 +66,18 @@ html, body, #root {
   border-bottom-style: outset;
 }
 
+.game-menu-item {
+  margin-right: 10px;
+  filter:brightness(0.8);
+}
+.game-menu-item:hover {
+  filter: brightness(1);
+}
+
+.sliding-menu-arrow:hover {
+  filter: invert(1);
+}
+
 body {
   background-color: #b3ffb3 !important;
 }

@@ -16,7 +16,7 @@ export default function GameItem(props) {
 			  src={thumbnailFilename} 
 			  width="200px" 
 			  height="133px"
-			  style={{marginRight:"10px"}}
+			  className="game-menu-item"
 			/>
 		</Link>
 	);

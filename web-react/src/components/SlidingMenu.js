@@ -42,7 +42,7 @@ export default function SlidingMenu(props) {
 	return (
 		<div style={wrapperStyle}>
 			<Image 
-			  className="showHandCursor" 
+			  className="sliding-menu-arrow showHandCursor" 
 			  style={leftArrowStyle}
 			  onClick={() => 
 			  	onClickLeft(
@@ -54,7 +54,7 @@ export default function SlidingMenu(props) {
 			  ref={leftArrowEl}
 			/>
 			<Image 
-			  className="showHandCursor" 
+			  className="sliding-menu-arrow showHandCursor" 
 			  style={rightArrowStyle}
 			  onClick={() => 
 			  	onClickRight(
