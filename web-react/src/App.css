@@ -35,21 +35,47 @@ h1, h2, p {
 }
 
 /* Game description */
-.game-view-description {
-  padding: 10px;
-  overflow: auto;
- }
+/**
+ * Game description style
+ */
+.game-banner {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 100%;
+}
 .game-view-description-engine {
   max-width: 150px;
   float: left;
-  margin: 15px;
+  margin: 0px 15px 0px 15px;
   text-align: center;
- }
- .game-view-description-engine p {
+}
+.game-view-description-engine p {
   margin-bottom: 0;
   font-size: 12px;
   font-weight: bold;
- }
+}
+
+/**
+ * Site panel styles
+ */
+.green-back-panel {
+  background-color: #339966;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+.round-bottom {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.round-top {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.bottom-ridge {
+  border-bottom: #339966;
+  border-bottom-width: 5px;
+  border-bottom-style: outset;
+}
 
 /**
  * Major site sections
@@ -65,21 +91,6 @@ html, body, #root {
 
   /* Makes the game selector layer above */
   position: absolute;
-
-  /* Bottom ridge */
-  border-bottom: #339966;
-  border-bottom-width: 5px;
-  border-bottom-style: outset;
-}
-
-.game-menu {
-  padding: 10px;
-  margin-bottom: 10px; 
-
-  /* Rounded corners */
-  background-color: #339966;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
 
   /* Bottom ridge */
   border-bottom: #339966;

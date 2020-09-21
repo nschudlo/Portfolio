@@ -119,16 +119,20 @@ export default function GameView(props) {
 	return (
 		<div>
 			<div className="d-flex justify-content-center">
-				<Image src={bannerUrl} width="100%"/>
+				<Image className="game-banner" src={bannerUrl}/>
 			</div>
-			<div className="game-view-description">
+			<div className="green-back-panel round-bottom bottom-ridge">
 				<div className="game-view-description-engine">
 					{engineLogo}
 					{engineDescription}
 				</div>
+				<h2>{details.title}</h2>
 				{description}
 			</div>
-			<div className="d-flex justify-content-center" style={{position:"relative"}}>
+			<div 
+			  className="d-flex justify-content-center
+			    green-back-panel round-bottom round-top bottom-ridge" 
+			  style={{position:"relative"}}>
 				{clickToPlay}
 				<div style={{width:details.width}}>
 					{game}
