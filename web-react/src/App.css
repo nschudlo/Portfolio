@@ -34,6 +34,27 @@ h1, h2, p {
   visibility: hidden;
 }
 
+/* Game description */
+.game-view-description {
+  padding: 10px;
+  overflow: auto;
+ }
+.game-view-description-engine {
+  max-width: 150px;
+  float: left;
+  margin: 15px;
+  text-align: center;
+ }
+ .game-view-description-engine p {
+  margin-bottom: 0;
+  font-size: 12px;
+  font-weight: bold;
+ }
+
+/**
+ * Major site sections
+ * Header, game menu, body, footer
+ */
 html, body, #root {
   height: 100%;
 }

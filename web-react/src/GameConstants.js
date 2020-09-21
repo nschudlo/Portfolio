@@ -5,10 +5,25 @@ export const NIGHT_SHIFT_ID         = "NightShift";
 export const MONKEY_FRACAS_JR_ID    = "MonkeyFracasJr";
 export const AMERICAN_GLADIATORS_ID = "AmericanGladiators";
 
+export const UNITY = "unity";
+export const UNREAL = "unreal";
+export const FLIXEL = "flixel";
+export const ENCHANTJS = "enchantjs";
+export const NINTENDODS = "nintendods";
+
+let engineDescriptions = {};
+engineDescriptions[UNITY] = ["Unity Engine"];
+engineDescriptions[UNREAL] = ["Unreal Engine"];
+engineDescriptions[FLIXEL] = ["Flixel Library", "ActionScript 3"];
+engineDescriptions[ENCHANTJS] = ["Enchant JS", "HTML5/Javascript"];
+engineDescriptions[NINTENDODS] = ["Nintendo DS", "libnds Library"];
+export const ENGINE_DESCRIPTIONS = engineDescriptions;
+
 export const GAME_LIST = [
   {
     id: FRUIT_SHOOT_RIOT_ID,
     title: "Fruit Shoot Riot",
+    engine: UNITY,
     width: 900,
     height: 506,
     clickMarginLeft: '-920px',
@@ -28,6 +43,7 @@ export const GAME_LIST = [
   {
   	id: FIREBALL_ID,
   	title: "Fireball",
+    engine: UNITY,
   	width: 900,
   	height: 506,
   	clickMarginLeft: '-920px',
@@ -44,6 +60,7 @@ export const GAME_LIST = [
   {
     id: CORPSE_CUISINE_ID,
     title: "Corpse Cuisine",
+    engine: FLIXEL,
     width: 300,
     height: 450,
     clickMarginLeft: '-370px',
@@ -59,6 +76,7 @@ export const GAME_LIST = [
   {
     id: NIGHT_SHIFT_ID,
     title: "Night Shift",
+    engine: ENCHANTJS,
     width: 900,
     height: 600,
     clickMarginLeft: '-880px',
@@ -71,6 +89,7 @@ export const GAME_LIST = [
   {
     id: MONKEY_FRACAS_JR_ID,
     title: "Monkey Fracas Jr.",
+    engine: NINTENDODS,
     width: 600,
     height: 450,
     clickMarginLeft: '-580px',
@@ -86,6 +105,7 @@ export const GAME_LIST = [
   {
     id: AMERICAN_GLADIATORS_ID,
     title: "American Gladiators",
+    engine: UNREAL,
     width: 600,
     height: 450,
     clickMarginLeft: '-580px',

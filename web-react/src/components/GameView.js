@@ -76,8 +76,7 @@ export default function GameView(props) {
 			<Image 
 			  onClick={() => setShowPreview(false)} 
 			  src={"/cdn/previews/ss_" + details.id}
-			  width={details.width + "px"}
-			  height={details.height + "px"}
+			  width="100%"
 			/>
 		);
 
@@ -92,6 +91,17 @@ export default function GameView(props) {
 		);
 	}
 
+	// Setup the engine logo and description
+	let engineLogo = (
+		<Image 
+		  src={"/cdn/logos/logo_" + details.engine}
+		  width="100%"
+		/>
+	);
+	let engineDescription = GameConstants.ENGINE_DESCRIPTIONS[details.engine]
+		.map(text => (<p key={text}>{text}</p>));
+
+	// Setup the game description
 	let description = details.description.split("<br>")
 		.map((text) => (<p key={text}>{text}</p>));
 
@@ -111,12 +121,18 @@ export default function GameView(props) {
 			<div className="d-flex justify-content-center">
 				<Image src={bannerUrl} width="100%"/>
 			</div>
-			<div>
+			<div className="game-view-description">
+				<div className="game-view-description-engine">
+					{engineLogo}
+					{engineDescription}
+				</div>
 				{description}
 			</div>
 			<div className="d-flex justify-content-center" style={{position:"relative"}}>
 				{clickToPlay}
-				{game}
+				<div style={{width:details.width}}>
+					{game}
+				</div>
 			</div>
 		</div>
 	);
