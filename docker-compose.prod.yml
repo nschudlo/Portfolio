@@ -3,11 +3,13 @@ version: '3.7'
 services:
   web-react:
     container_name: web-react
+    restart: unless-stopped
     build:
       context: ./web-react
       dockerfile: Dockerfile.prod
     volumes:
       - prod-react-build:/app/build
+    stdin_open: true
 
   nginx:
     container_name: nginx
