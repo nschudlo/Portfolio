@@ -3,14 +3,13 @@ version: '3.7'
 services:
   web-react:
     container_name: web-react
+    restart: unless-stopped
     build:
       context: ./web-react
       dockerfile: Dockerfile
     volumes:
       - './web-react:/app'
       - '/app/node_modules'
-    environment:
-      - CHOKIDAR_USEPOLLING=true
     stdin_open: true # needed because react-scripts exits after running
 
   nginx:
