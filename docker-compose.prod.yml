@@ -5,13 +5,10 @@ services:
     container_name: web-react
     build:
       context: ./web-react
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.prod
     volumes:
-      - './web-react:/app'
-      - '/app/node_modules'
-    environment:
-      - CHOKIDAR_USEPOLLING=true
-    stdin_open: true # needed because react-scripts exits after running
+      - prod-react-build:/app/build
+    stdin_open: true
 
   nginx:
     container_name: nginx
@@ -21,6 +18,7 @@ services:
       - 80:80
       - 443:443
     volumes:
+      - prod-react-build:/usr/share/nginx/build
       - ./cdn/:/usr/share/nginx/cdn
       - ./nginx/live:/etc/nginx/conf.d
       - ./certbot/conf:/etc/letsencrypt
@@ -37,3 +35,6 @@ services:
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/certbot
     entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+
+volumes:
+  prod-react-build:
