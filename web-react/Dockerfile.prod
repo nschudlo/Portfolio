@@ -17,4 +17,5 @@ RUN npm install react-scripts@3.4.1 -g
 COPY . ./
 
 # build production files
-RUN npm run build
+# This happens in docker-compose now
+# RUN npm run build
