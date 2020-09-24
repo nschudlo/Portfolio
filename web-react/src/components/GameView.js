@@ -5,6 +5,7 @@ import Image from 'react-bootstrap/Image';
 import Iframe from 'react-iframe'
 
 import * as GameConstants from "../GameConstants";
+import * as Utils from "../Utils";
 import Panel from "./Panel";
 
 export default function GameView(props) {
@@ -84,12 +85,31 @@ export default function GameView(props) {
 		  width="100%"
 		/>
 	);
-	let engineDescription = GameConstants.ENGINE_DESCRIPTIONS[details.engine]
-		.map(text => (<p key={text}>{text}</p>));
+	let engineDescription = Utils.SplitArrayP(
+		GameConstants.ENGINE_DESCRIPTIONS[details.engine]
+	);
 
 	// Setup the game description
-	let description = details.description.split("<br>")
-		.map((text) => (<p key={text}>{text}</p>));
+	let description = Utils.SplitListP(details.description);
+
+	// Setup the how to play panel
+	let howToPlay = null;
+	if('howToPlay' in details) {
+		let howToWin = Utils.SplitListLi(details.howToWin);
+		let instructions = Utils.SplitListLi(details.howToPlay);
+		howToPlay = (
+			<Panel title="How to Play">
+				<h4>Goal:</h4>
+				<ul>
+					{howToWin}
+				</ul>
+				<h4>Controls:</h4>
+				<ul>
+					{instructions}
+				</ul>
+			</Panel>
+		);
+	}
 
 	useEffect(() => {
 		// Need to set the focus on Night Shift when 
@@ -114,11 +134,9 @@ export default function GameView(props) {
 				</div>
 			</Panel>
 
-			<Panel title="How to Play">
-				This is how you play.
-			</Panel>
+			{howToPlay}
 
-			<Panel title="About" className="clearfix">
+			<Panel title="About the Game" className="clearfix">
 				<div className="game-view-description-engine">
 					{engineLogo}
 					{engineDescription}

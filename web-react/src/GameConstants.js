@@ -39,6 +39,9 @@ export const GAME_LIST = [
     	+ "together to build out the game features we wanted in the game.<br>"
     	+ "The team members I worked with were: Xander Ward, Keith Mclean, "
     	+ "and Carlos Corrêa.",
+    howToWin:"Feed the monsters the fruit they are asking for!",
+    howToPlay: "Select a fruit with the 1-4 keys (or mouse wheel)<br>"
+        + "Aim and Shoot with the left mouse button",
   },
   {
   	id: FIREBALL_ID,
@@ -56,6 +59,9 @@ export const GAME_LIST = [
     	+ "level loading, pathfinding of the fire fighter (using A* pathfinding), and "
     	+ "the firespread simulation.<br>The team members I worked with were: Don "
     	+ "Champan and Nick Beltrame.",
+    howToWin: "Put out the fires before they spread too far!",
+    howToPlay: "Click a tile and drag in a direction to instruct the fire fighter where to spray<br>"
+        + "Right click and drag to move around the farm"
   },
   {
     id: CORPSE_CUISINE_ID,
@@ -72,6 +78,10 @@ export const GAME_LIST = [
     	+ "fourth year of undergrad. The other members of the group were: "
     	+ "Spencer Baynton, Taylor Jackson, Brandon Kerr, with artwork by "
     	+ "Holly Bu'Lock.",
+    howToWin: "Don't let zombies get to the chef",
+    howToPlay: "Select 2 tiles to swap<br>"
+        + "Making chains of 4 of the same type sends a dish out to the zombies<br>"
+        + "Click the chef to use bullets when in a jam",
   }, 
   {
     id: NIGHT_SHIFT_ID,
@@ -85,6 +95,11 @@ export const GAME_LIST = [
     	+ "cure the zombie patients and escape the hospital!<br>I made this "
     	+ "game as a Christmas gift so it's filled with references to jokes "
     	+ "and other games we've played together!",
+    howToWin:"Get nurse Nikki out of the hospital<br>"
+        + "Collect enough studs to become a True Nurse!",
+    howToPlay:"Use the arrow keys to move around<br>"
+        + "Press the space key to shoot the cure<br>"
+        + "You can jump by pressing the up arrow at the top of the level",
   },
   {
     id: MONKEY_FRACAS_JR_ID,
