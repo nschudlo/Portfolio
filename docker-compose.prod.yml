@@ -8,6 +8,7 @@ services:
       dockerfile: Dockerfile.prod
     volumes:
       - prod-react-build:/app/build
+    stdin_open: true
 
   nginx:
     container_name: nginx
