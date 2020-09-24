@@ -132,10 +132,6 @@ export default function GameView(props) {
 		}
 	});
 
-	let banner = (
-		<Image className="game-banner" src={bannerUrl}/>
-	);
-
 	return (
 		<div>
 			
