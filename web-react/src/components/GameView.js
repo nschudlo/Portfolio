@@ -8,6 +8,9 @@ import * as GameConstants from "../GameConstants";
 import * as Utils from "../Utils";
 import Panel from "./Panel";
 
+const CLICK_TO_PLAY = "Click to Play ";
+const CLICK_TO_WATCH = "Click to Watch ";
+
 export default function GameView(props) {
 	let details = props.details;
 	let [showPreview, setShowPreview] = useState(true);
@@ -78,6 +81,12 @@ export default function GameView(props) {
 		);
 	}
 
+	let gameTitle = CLICK_TO_PLAY + details.title;
+	if(details.id === GameConstants.MONKEY_FRACAS_JR_ID
+			|| details.id === GameConstants.AMERICAN_GLADIATORS_ID) {
+		gameTitle = CLICK_TO_WATCH + details.title;
+	}
+
 	// Setup the engine logo and description
 	let engineLogo = (
 		<Image 
@@ -124,7 +133,7 @@ export default function GameView(props) {
 
 	return (
 		<div>
-			<Panel title={details.title}>
+			<Panel title={gameTitle}>
 				<div 
 				  className="d-flex justify-content-center" 
 				  style={{position:"relative"}}>
