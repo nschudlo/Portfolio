@@ -13,6 +13,7 @@ const CLICK_TO_WATCH = "Click to Watch ";
 
 export default function GameView(props) {
 	let details = props.details;
+	let bannerUrl = "/cdn/banners/bn_" + details.id + ".png";
 	let [showPreview, setShowPreview] = useState(true);
 
 	// Show the preview image until it is clicked
@@ -131,8 +132,21 @@ export default function GameView(props) {
 		}
 	});
 
+	let banner = (
+		<Image className="game-banner" src={bannerUrl}/>
+	);
+
 	return (
 		<div>
+			
+			<Panel headerImage={bannerUrl} headerClassName="game-banner" className="clearfix">
+				<div className="game-view-description-engine">
+					{engineLogo}
+					{engineDescription}
+				</div>
+				{description}
+			</Panel>
+
 			<Panel title={gameTitle}>
 				<div 
 				  className="d-flex justify-content-center" 
@@ -144,14 +158,6 @@ export default function GameView(props) {
 			</Panel>
 
 			{howToPlay}
-
-			<Panel title="About the Game" className="clearfix">
-				<div className="game-view-description-engine">
-					{engineLogo}
-					{engineDescription}
-				</div>
-				{description}
-			</Panel>
 		</div>
 	);
 }
