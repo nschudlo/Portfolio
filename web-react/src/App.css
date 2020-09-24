@@ -7,6 +7,12 @@ h1, h2, p {
   src: url(fonts/Ubuntu-Regular.ttf);
 }
 
+.clearfix {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 /* Sliding Menu */
 .scrolling-wrapper {
   display: flex;
@@ -39,9 +45,8 @@ h1, h2, p {
  * Game description style
  */
 .game-banner {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
   width: 100%;
+  max-height:130px;
 }
 .game-view-description-engine {
   max-width: 150px;
@@ -58,9 +63,14 @@ h1, h2, p {
 /**
  * Site panel styles
  */
-.green-back-panel {
+.green-panel {
   background-color: #339966;
   margin-bottom: 10px;
+  padding: 10px;
+}
+.green-panel-header {
+  background-color: #339966;
+  filter: brightness(0.8); 
   padding: 10px;
 }
 .round-bottom {

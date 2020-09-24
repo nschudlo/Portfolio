@@ -5,13 +5,10 @@ import Image from 'react-bootstrap/Image';
 import Iframe from 'react-iframe'
 
 import * as GameConstants from "../GameConstants";
-
-const CLICK_TO_PLAY_URL = "/cdn/clickToPlay.png";
+import Panel from "./Panel";
 
 export default function GameView(props) {
 	let details = props.details;
-	let bannerUrl = "/cdn/banners/bn_" + details.id + ".png";
-
 	let [showPreview, setShowPreview] = useState(true);
 
 	// Show the preview image until it is clicked
@@ -70,23 +67,12 @@ export default function GameView(props) {
 		}
 	}
 
-	let clickToPlay = null;
 	if(showPreview) {
 		game = (
 			<Image 
 			  onClick={() => setShowPreview(false)} 
 			  src={"/cdn/previews/ss_" + details.id}
 			  width="100%"
-			/>
-		);
-
-		clickToPlay = (
-			<Image 
-			  src={CLICK_TO_PLAY_URL} 
-			  style={{
-			  	position:"absolute", 
-			  	marginLeft: details.clickMarginLeft,
-			  }}
 			/>
 		);
 	}
@@ -118,26 +104,27 @@ export default function GameView(props) {
 
 	return (
 		<div>
-			<div className="d-flex justify-content-center">
-				<Image className="game-banner" src={bannerUrl}/>
-			</div>
-			<div className="green-back-panel round-bottom bottom-ridge">
+			<Panel title={details.title}>
+				<div 
+				  className="d-flex justify-content-center" 
+				  style={{position:"relative"}}>
+					<div style={{width:details.width}}>
+						{game}
+					</div>
+				</div>
+			</Panel>
+
+			<Panel title="How to Play">
+				This is how you play.
+			</Panel>
+
+			<Panel title="About" className="clearfix">
 				<div className="game-view-description-engine">
 					{engineLogo}
 					{engineDescription}
 				</div>
-				<h2>{details.title}</h2>
 				{description}
-			</div>
-			<div 
-			  className="d-flex justify-content-center
-			    green-back-panel round-bottom round-top bottom-ridge" 
-			  style={{position:"relative"}}>
-				{clickToPlay}
-				<div style={{width:details.width}}>
-					{game}
-				</div>
-			</div>
+			</Panel>
 		</div>
 	);
 }
