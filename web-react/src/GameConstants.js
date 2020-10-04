@@ -1,4 +1,5 @@
 export const FRUIT_SHOOT_RIOT_ID    = "FruitShootRiot";
+export const PAINTBALL_ID           = "PaintBall";
 export const FIREBALL_ID            = "Fireball";
 export const CORPSE_CUISINE_ID      = "CorpseCuisine";
 export const NIGHT_SHIFT_ID         = "NightShift";
@@ -42,6 +43,18 @@ export const GAME_LIST = [
     howToWin:"Feed the monsters the fruit they are asking for!",
     howToPlay: "Select a fruit with the 1-4 keys (or mouse wheel)<br>"
         + "Aim and Shoot with the left mouse button",
+  },
+  {
+    id: PAINTBALL_ID,
+    title: "PaintBall Demo",
+    engine: UNITY,
+    width: 900,
+    height: 506,
+    clickMarginLeft: '-920px',
+    description:"A demo project I made to test using 2D physics and drawing to a "
+        + "texture efficiently. This is based off of a brush available in the 90s "
+        + "art game Kid Pix Studios.",
+    howToPlay: "Click and drag to shoot a paintball<br>Press Space to Reset",
   },
   {
   	id: FIREBALL_ID,

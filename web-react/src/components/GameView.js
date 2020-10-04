@@ -41,6 +41,7 @@ export default function GameView(props) {
 			case GameConstants.FRUIT_SHOOT_RIOT_ID:
 			case GameConstants.NIGHT_SHIFT_ID:
 			case GameConstants.FIREBALL_ID:
+			case GameConstants.PAINTBALL_ID:
 				game = (
 					<Iframe 
 					  id={details.id + "_game"}
@@ -105,14 +106,23 @@ export default function GameView(props) {
 	// Setup the how to play panel
 	let howToPlay = null;
 	if('howToPlay' in details) {
-		let howToWin = Utils.SplitListLi(details.howToWin);
+		let goal = null;
+		if('howToWin' in details) {
+			let howToWin = Utils.SplitListLi(details.howToWin);
+			goal = (
+				<React.Fragment>
+					<h4>Goal:</h4>
+					<ul>
+						{howToWin}
+					</ul>
+				</React.Fragment>
+			);
+		}
+
 		let instructions = Utils.SplitListLi(details.howToPlay);
 		howToPlay = (
 			<Panel title="How to Play">
-				<h4>Goal:</h4>
-				<ul>
-					{howToWin}
-				</ul>
+				{goal}
 				<h4>Controls:</h4>
 				<ul>
 					{instructions}
