@@ -1,6 +1,7 @@
 version: '3.7'
 
 services:
+  # React node container for building the front end
   web-react:
     container_name: web-react
     build:
@@ -10,6 +11,7 @@ services:
       - prod-react-build:/app/build
     command: "npm run build"
 
+  # Web server
   nginx:
     container_name: nginx
     image: nginx:1.19.2-alpine
@@ -27,6 +29,14 @@ services:
     depends_on:
       - web-react
 
+  # C++ backend server for game stats
+  stats-server:
+    container_name: stats-server
+    build:
+      context: ./stats-server
+      dockerfile: Dockerfile
+
+  # Cerbot for updating the ssl certificate
   certbot:
     container_name: certbot
     image: certbot/certbot

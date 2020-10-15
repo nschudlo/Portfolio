@@ -1,6 +1,7 @@
 version: '3.7'
 
 services:
+  # React node container for developing the front end
   web-react:
     container_name: web-react
     build:
@@ -13,6 +14,7 @@ services:
       - CHOKIDAR_USEPOLLING=true
     stdin_open: true # needed because react-scripts exits after running
 
+  # Web server
   nginx:
     container_name: nginx
     build:
@@ -24,3 +26,10 @@ services:
       - ./cdn/:/usr/share/nginx/cdn
     depends_on:
       - web-react
+
+  # C++ backend server for game stats
+  stats-server:
+    container_name: stats-server
+    build:
+      context: ./stats-server
+      dockerfile: Dockerfile
