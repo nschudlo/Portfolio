@@ -1,3 +1,0 @@
-[submodule "stats-server/stats-server"]
-	path = stats-server/stats-server
-	url = git@github.com:nschudlo/stats-server.git
