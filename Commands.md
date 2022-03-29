@@ -1,5 +1,5 @@
 ### Setup LetsEncrypt
-`./initialize-letsencrypt`
+`./initialize-letsencrypt.sh`
 
 ### Start Services
 `docker-compose -f docker-compose.prod.yml up --build -d`
