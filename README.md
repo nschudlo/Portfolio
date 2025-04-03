@@ -7,4 +7,3 @@ Source code for my personal website([nickschudlo.com](https://nickschudlo.com)) 
   - nginx
   - react
   - certbot (on production)
-- Running on a Digital Ocean droplet.
