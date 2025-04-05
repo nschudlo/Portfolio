@@ -2,7 +2,7 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router';
 
 export default function Menu(props) {
 	return (

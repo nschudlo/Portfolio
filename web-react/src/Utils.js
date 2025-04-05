@@ -17,7 +17,7 @@ export function SplitListP(list) {
  */
 export function SplitArrayP(array) {
 	return array
-		.map((text) => (<p key={text}>{text}</p>));	
+		.map((text) => (<p key={text}>{text}</p>));
 }
 
 /**
@@ -27,5 +27,5 @@ export function SplitArrayP(array) {
  */
 export function SplitListLi(list) {
 	return list.split("<br>")
-		.map((text) => (<li key={text}>{text}</li>));	
+		.map((text) => (<li key={text}>{text}</li>));
 }

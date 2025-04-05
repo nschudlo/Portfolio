@@ -1,27 +1,23 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-
+import React from 'react';
 import Image from 'react-bootstrap/Image';
-
-import {Link, useRouteMatch} from 'react-router-dom';
+import { Link } from 'react-router';
 
 export default function GameItem(props) {
 	let details = props.gameDetails;
 	let thumbnailFilename = "/cdn/thumbnails/tn_" + details.id + ".png";
-	let {url} = useRouteMatch();
-	let link = url + (url.endsWith('/') ? "" : "/") + details.id;
 
 	let className = "game-menu-item";
-	if(props.isLast) {
+	if (props.isLast) {
 		className += " last";
 	}
 	return (
-		<Link to={link}>
+		<Link to={`../${details.id}`}>
 			<Image
-			  src={thumbnailFilename} 
-			  width="200px" 
-			  height="133px"
-			  className={className}
+				src={thumbnailFilename}
+				width="200px"
+				height="133px"
+				className={className}
 			/>
 		</Link>
 	);

@@ -1,4 +1,6 @@
-h1, h2, p {
+h1,
+h2,
+p {
   font-family: ubuntu;
 }
 
@@ -31,8 +33,9 @@ h1, h2, p {
 .grow {
   transition: all .2s ease-in-out;
 }
-.grow:hover { 
-  transform: scale(1.1); 
+
+.grow:hover {
+  transform: scale(1.1);
 }
 
 /* Hide an element */
@@ -46,14 +49,16 @@ h1, h2, p {
  */
 .game-banner {
   width: 100%;
-  max-height:130px;
+  max-height: 130px;
 }
+
 .game-view-description-engine {
   max-width: 150px;
   float: left;
   margin: 0px 15px 0px 15px;
   text-align: center;
 }
+
 .game-view-description-engine p {
   margin-bottom: 0;
   font-size: 12px;
@@ -68,19 +73,23 @@ h1, h2, p {
   margin-bottom: 10px;
   padding: 10px;
 }
+
 .panel-header {
   background-color: #339966;
-  filter: brightness(0.8); 
+  filter: brightness(0.8);
   padding: 10px;
 }
+
 .round-bottom {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
+
 .round-top {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
+
 .bottom-ridge {
   border-bottom: #339966;
   border-bottom-width: 5px;
@@ -91,7 +100,9 @@ h1, h2, p {
  * Major site sections
  * Header, game menu, body, footer
  */
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
 }
 
@@ -110,11 +121,13 @@ html, body, #root {
 
 .game-menu-item {
   margin-right: 10px;
-  filter:brightness(0.8);
+  filter: brightness(0.8);
 }
+
 .game-menu-item:hover {
   filter: brightness(1);
 }
+
 .last {
   margin-right: 0px;
 }
@@ -141,7 +154,7 @@ body {
 }
 
 .site-footer {
-  height:30px;
+  height: 30px;
   margin-top: -30px;
   background-color: #339966;
 

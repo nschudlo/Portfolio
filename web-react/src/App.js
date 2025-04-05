@@ -1,31 +1,30 @@
 import React from 'react';
-import './App.css';
-import SiteHeader from "./components/SiteHeader";
-import SiteFooter from "./components/SiteFooter";
-import PortfolioView from "./components/PortfolioView";
 import Container from "react-bootstrap/Container";
-
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import { Route, Routes } from 'react-router';
+import './App.css';
+import PortfolioView from "./components/PortfolioView";
+import SiteFooter from "./components/SiteFooter";
+import SiteHeader from "./components/SiteHeader";
 
 function App() {
   return (
-    <Router>
+    <React.Fragment>
       <div id="header-and-body">
         <Container fluid className="site-header">
           <SiteHeader />
         </Container>
 
         <Container fluid="lg" className="site-body">
-          <Route path="/">
-            <PortfolioView />
-          </Route>
+          <Routes>
+            <Route path="/:id?" element={<PortfolioView />} />
+          </Routes>
         </Container>
       </div>
 
       <Container fluid className="site-footer">
         <SiteFooter />
       </Container>
-    </Router>
+    </React.Fragment>
   );
 }
 

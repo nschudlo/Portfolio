@@ -1,19 +1,16 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-
-import {useRouteMatch} from 'react-router-dom';
-
+import React from 'react';
 import Accordion from 'react-bootstrap/Accordion';
-
+import { useParams } from 'react-router';
 import GameView from './GameView';
 
 export default function GamesView(props) {
-	let match = useRouteMatch("*/:id");
-	let activeKey = match !== null ? match.params.id : null;
+	let { id } = useParams();
+	let activeKey = id;
 
 	let games = props.list.map((gameDetails) => {
 		// Show the first game if none are selected
-		if(activeKey === null) {
+		if (!activeKey) {
 			activeKey = gameDetails.id;
 		}
 
@@ -21,9 +18,9 @@ export default function GamesView(props) {
 		return (
 			<Accordion.Collapse eventKey={gameDetails.id} key={gameDetails.id}>
 				<div>
-					<GameView 
-					  details={gameDetails} 
-					  isVisible={isVisible}
+					<GameView
+						details={gameDetails}
+						isVisible={isVisible}
 					/>
 				</div>
 			</Accordion.Collapse>
@@ -31,7 +28,7 @@ export default function GamesView(props) {
 	});
 
 	return (
-		<Accordion activeKey={activeKey} style={{width:"100%"}}>
+		<Accordion activeKey={activeKey} style={{ width: "100%" }}>
 			{games}
 		</Accordion>
 	);

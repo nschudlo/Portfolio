@@ -1,5 +1,4 @@
 import React from 'react';
-
 import GameList from "./GameList";
 import GamesView from "./GamesView";
 
@@ -9,9 +8,9 @@ export default function PortfolioView(props) {
 	return (
 		<div>
 			<div className="panel bottom-ridge round-bottom">
-				<GameList list={GameConstants.GAME_LIST}/>
+				<GameList list={GameConstants.GAME_LIST} />
 			</div>
-			<GamesView list={GameConstants.GAME_LIST}/>
+			<GamesView list={GameConstants.GAME_LIST} />
 		</div>
 	);
 }

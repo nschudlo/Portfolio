@@ -1,5 +1,4 @@
-import React, {useRef, useEffect} from 'react';
-
+import React, { useEffect, useRef } from 'react';
 import Image from 'react-bootstrap/Image';
 
 /**
@@ -42,8 +41,8 @@ export default function SlidingMenu(props) {
 	useEffect(() => {
 		function handleResize() {
 			updateArrows(
-				scrollWrapperEl.current, 
-				leftArrowEl.current, 
+				scrollWrapperEl.current,
+				leftArrowEl.current,
 				rightArrowEl.current
 			);
 		}
@@ -58,29 +57,29 @@ export default function SlidingMenu(props) {
 
 	return (
 		<div style={wrapperStyle}>
-			<Image 
-			  className="sliding-menu-arrow showHandCursor" 
-			  style={leftArrowStyle}
-			  onClick={() => 
-			  	onClickLeft(
-			  		scrollWrapperEl.current, 
-			  		leftArrowEl.current,
-			  		rightArrowEl.current
-			  	)}
-			  src="/cdn/left.png"
-			  ref={leftArrowEl}
+			<Image
+				className="sliding-menu-arrow showHandCursor"
+				style={leftArrowStyle}
+				onClick={() =>
+					onClickLeft(
+						scrollWrapperEl.current,
+						leftArrowEl.current,
+						rightArrowEl.current
+					)}
+				src="/cdn/left.png"
+				ref={leftArrowEl}
 			/>
-			<Image 
-			  className="sliding-menu-arrow showHandCursor" 
-			  style={rightArrowStyle}
-			  onClick={() => 
-			  	onClickRight(
-			  		scrollWrapperEl.current, 
-			  		leftArrowEl.current, 
-			  		rightArrowEl.current
-			  	)}
-			  src="/cdn/right.png"
-			  ref={rightArrowEl}
+			<Image
+				className="sliding-menu-arrow showHandCursor"
+				style={rightArrowStyle}
+				onClick={() =>
+					onClickRight(
+						scrollWrapperEl.current,
+						leftArrowEl.current,
+						rightArrowEl.current
+					)}
+				src="/cdn/right.png"
+				ref={rightArrowEl}
 			/>
 			<div className="scrolling-wrapper" ref={scrollWrapperEl}>
 				{props.children}
@@ -126,16 +125,16 @@ function scrollTo(scrollContainer, targetLeft) {
 			let left = scrollContainer.scrollLeft;
 
 			// Need to move right
-			if(left < targetLeft) {
+			if (left < targetLeft) {
 				scrollContainer.scrollLeft = left + JUMP;
 
-			// Need to move left
-			} else if(scrollContainer.scrollLeft > targetLeft) {
+				// Need to move left
+			} else if (scrollContainer.scrollLeft > targetLeft) {
 				scrollContainer.scrollLeft = left - JUMP;
 			}
 
 			// The target has been hit
-			if((goingRight && left >= targetLeft) || (!goingRight && left <= targetLeft)) {
+			if ((goingRight && left >= targetLeft) || (!goingRight && left <= targetLeft)) {
 				scrollContainer.scrollLeft = targetLeft;
 				clearInterval(interval);
 				resolve();
@@ -152,15 +151,15 @@ function scrollTo(scrollContainer, targetLeft) {
  * @param rightArrow
  */
 function updateArrows(scrollContainer, leftArrow, rightArrow) {
-	if(scrollContainer.scrollLeft === 0) {
+	if (scrollContainer.scrollLeft === 0) {
 		leftArrow.classList.add("hidden");
 	} else {
 		leftArrow.classList.remove("hidden");
 	}
 
-	if(scrollContainer.scrollLeft === (scrollContainer.scrollWidth - scrollContainer.offsetWidth)) {
+	if (scrollContainer.scrollLeft === (scrollContainer.scrollWidth - scrollContainer.offsetWidth)) {
 		rightArrow.classList.add("hidden");
 	} else {
 		rightArrow.classList.remove("hidden");
-	}	
+	}
 }

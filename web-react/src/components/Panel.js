@@ -1,23 +1,22 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-
+import React from 'react';
 import Image from 'react-bootstrap/Image';
 
 export default function Panel(props) {
 	let header = null;
 
 	// If a header image is provided use that
-	if(props.headerImage !== null) {
+	if (props.headerImage) {
 		header = (
-			<Image 
-			  className={props.headerClassName + " round-top"} 
-			  src={props.headerImage}
+			<Image
+				className={props.headerClassName + " round-top"}
+				src={props.headerImage}
 			/>
 		);
 	} else {
 		header = (
 			<div className="panel-header round-top">
-				<h2 style={{textAlign:"center"}}>
+				<h2 style={{ textAlign: "center" }}>
 					{props.title}
 				</h2>
 			</div>
@@ -26,7 +25,7 @@ export default function Panel(props) {
 
 	return (
 		<React.Fragment>
-			{header}		
+			{header}
 			<div className={"panel round-bottom bottom-ridge " + props.className}>
 				{props.children}
 			</div>
